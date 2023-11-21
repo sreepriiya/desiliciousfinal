@@ -1,0 +1,983 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background:var(--green);
+    color:#fff
+
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    
+}
+
+body{
+    background: #f6f6f6;
+}
+
+header{
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding:1rem 7%;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+header .logo i{
+    padding-right: .5rem;
+    color:var(--green);
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+
+
+header .navbar a{
+    font-size: 1.7rem;
+    padding: .5rem 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:var(--light-color);
+    border-radius: .5rem;
+
+}
+
+header .navbar a:hover,
+header .navbar a.active
+{
+    color:var(--green);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+
+
+header .navbar a i {
+    margin-right: 0.5rem;
+}
+
+
+.navbar a[href="#signin"],
+.navbar a[href="#login"] {
+    background-color: #333;
+    color: #fff; 
+    padding: 1px 1px; 
+    align-items: baseline;
+    border-radius: 20px; 
+    margin-left: 20px; 
+    text-decoration: none; 
+}
+
+.navbar a[href="#signin"]:hover,
+.navbar a[href="#login"]:hover {
+    background-color: #1b1616; 
+}
+
+
+
+  header .navbar a.nav-link.active {
+    
+    font-weight: bold;
+  }
+
+header .icons i,
+header .icons a{
+     cursor: pointer;
+     margin-left: 0.5rem;
+     height: 4.5rem;
+     line-height: 4.5rem;
+     width: 4.5rem;
+     text-align: center;
+     font-size: 1.7rem;
+     color:var(--black);
+     border-radius: 50%;
+     background: #eee;
+}
+
+
+header .icons a:hover{
+    color:var(--green);
+}
+
+/* Styles for the menu icon */
+.menu-icon {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Media query to show the menu icon on smaller screens */
+@media (max-width: 768px) {
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+    }
+    header .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+    
+    }
+
+  .dropdown, header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        width: 100%;
+    }
+    .dropdown #contact-link{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+    
+    
+    .menu-icon {
+        display: flex; /* Show the menu icon on smaller screens */
+    }
+
+    .navbar {
+        display: none; /* Hide the navigation items by default */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px; /* Adjust as needed to position the dropdown */
+        left: 0;
+        right: 0;
+        box-shadow: 0 .1rem 1rem rgba(220, 49, 49, 0.1);
+        z-index: 100;
+    }
+
+    .navbar.active {
+        display: flex; /* Show the navigation items when active */
+    }
+}
+
+/* -------------------------------- SEARCH---------------------------------------- */
+#search-form{
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+
+}
+
+#search-form.active{
+    top: 0;
+}
+
+#search-form #search-box{
+    width: 50rem;
+    border-bottom: .1rem solid #fff;
+    padding: 1rem 0;
+    color:#fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none ;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box ::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+
+}
+
+#search-form lable{
+    color:#fff;
+    cursor:pointer;
+    font-size: 3rem;
+}
+
+#search-form lable:hover{
+    color:var(--green);
+}
+
+#search-form #close{
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+}
+
+
+.navbar.help-link{
+    font-weight: bold;
+    color: var(--green); 
+  }
+/* -------------------------------- CONTACT---------------------------------------- */
+
+#contact-details {
+    display: none; /* Hide contact details by default */
+}
+
+#contact-details.show {
+    display: block; /* Show contact details when the link is clicked */
+}
+
+/* -------------------------------- HOME---------------------------------------- */
+
+.home {
+
+   margin:0;
+   padding:0;
+   overflow: hidden;
+  
+}
+
+.container{
+    width:100%;
+    height:50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper{
+    width:100%;
+}
+
+.swiper-slide img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color:#fff;
+}
+.swiper.swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    .swiper-slide img {
+        object-fit: contain; /* or any other value that suits your design */
+        max-width: 100%; /* Optional: Set a max-width for smaller screens */
+        max-height: 100%; /* Optional: Set a max-height for smaller screens */
+    }
+}
+/* -------------------------------- Sepcials---------------------------------------- */
+
+
+    /* Style for the specials section */
+    .specials {
+        background-color: #f9f9f9; /* Background color for the section */
+        text-align: center;
+        padding: 60px 10px; /* Adjust the padding as needed */
+    }
+
+    /* Style for the sub-heading */
+    .sub-heading {
+        font-size: 50px;
+        text-align: center;
+        color:var(--green); /* Text color */
+        margin-bottom: 20px; /* Spacing between sub-heading and heading */
+        
+    }
+
+    /* Style for the heading */
+    .heading {
+        font-size: 36px;
+        text-align: center;
+        color: #0a0808; /* Text color */
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    /*......*/
+
+    .specials .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    .specials .box-container .box {
+        flex: 0 0 calc(33% - 1rem); /* Adjust the width as needed for three items */
+        background: #fbf8f8;
+        border: .1rem solid rgba(0, 0, 0, .2);
+        border-radius: 1.5rem;
+        box-shadow: 0 12px 10px rgba(23, 22, 22, 0.1); /* Added box shadow for a lifted effect */
+        padding: 0.5rem;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Ensure the box shadow is fully visible */
+   
+    }
+
+   
+
+    .specials .box-container .box .image{
+        height: 25rem;
+        width: 100%;
+        padding:1.5rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .specials .box-container .box .image img{
+        height: 100%;
+        width: 100%;
+        border-radius: .5rem;
+        object-fit: contain;
+    }
+
+    .specials .box-container .box .image .fa-crown{
+        position: absolute;
+        top:2.5rem; right: 2.5rem;
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        text-align: center;
+        font-size: 3rem;
+        background: #fff;
+        border-radius: 50%;
+        color:#fef61b;
+    }
+
+    .specials .box-container .box .content{
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+        padding:2rem;
+        padding-top: 0;
+    }
+
+    .specials .box-container .box .content .custom-link{
+        font-size: 14px;
+    }
+
+    .specials .box-container .box .content .stars{
+        padding-bottom: 1rem ; 
+    }
+
+    .specials .box-container .box .content .stars i{
+        font-size: 1.7rem;
+        color:var(--green);
+    }
+
+    .specials .box-container .box .content h3{
+        color:var(--black);
+    }
+
+    .specials .box-container .box .content p{
+        color:var(--light-color);
+        font-size: 1.6rem;
+        padding:.5rem 0;
+        line-height: 1.5;
+    }
+
+    .specials .box-container .box .content .price{
+        color:var(--green);
+        margin-left: 1rem;
+        font-size: 1.75rem;
+        position: relative;
+        bottom: 10px; /* Adjust the distance from the bottom as needed */
+        right: -100px; /* Adjust the distance from the right as needed */
+    
+    }
+
+    .btn {
+        position: relative;
+        bottom: -20px; /* Adjust the distance from the bottom as needed */
+        right: -100px; /* Adjust the distance from the right as needed */
+        /* Your existing styles for .btn */
+    }
+
+    
+
+    footer{
+        background-color: #0b0909;
+    }
+    .flexfooter{
+        display: flex;
+        flex-direction: row;
+    }
+    .lastdata, .lastsocial{
+        color: white;
+        padding: 10mm 10mm 20mm 50mm;
+        font-size: 4mm;
+        display: block;
+        width: 49%;
+        
+    }
+    .lastsocial{
+        text-align: right;
+        padding: 10mm 50mm 20mm 10mm;
+    }
+    .social.fab {
+        padding: 20px;
+        font-size: 300px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        background: #0b0909;
+        color: rgb(255, 255, 255);
+    }
+    
+    .lastsocial a:-webkit-any-link {
+        color: white;
+    }
+
+    .lastsocial.fab:hover {
+        opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+        .specials .box-container .box {
+            flex: 0 0 calc(100% - 1rem); /* Adjust the width for smaller screens with some margin */
+        }
+        .flexfooter{
+            flex-direction: column;
+        }
+        .lastsocial, .lastdata{
+            width: 100%;
+            padding: 4mm 4mm 8mm 4mm;
+            text-align: justify;
+        }
+    }
+
+/* -------------------------------- MENU---------------------------------------- */
+
+.menu {
+    background-color: #f9f9f9; /* Background color for the section */
+    text-align: center;
+    padding: 60px 10; /* Adjust the padding as needed */
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.menu .box-container .box{
+    background: #fff;
+    border:.1rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu .box-container .box:hover {
+    transform: scale(1.1); /* Increase the size on hover (zoom-in effect) */
+}
+
+.menu .box-container .box .content .custom-link{
+    font-size: 13px;
+}
+
+.menu .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding:1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.menu .box-container .box .image .fa-heart{
+    position: absolute;
+    top:2.5rem; right: 2.5rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    color:var(--black);
+}
+
+.menu .box-container .box .image .fa-heart:hover{
+    background-color: var(--green);
+    color: #fff;
+}
+
+.menu .box-container .box .content{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+    padding:2rem;
+    padding-top: 0;
+}
+
+.menu .box-container .box .content .stars{
+    padding-bottom: 1rem ; 
+}
+
+.menu .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color:var(--green);
+}
+
+.menu .box-container .box .content h3{
+    color:var(--black);
+}
+
+.menu .box-container .box .content p{
+    color:var(--light-color);
+    font-size: 1.6rem;
+    padding:.5rem 0;
+    line-height: 1.5;
+}
+
+.menu .box-container .box .content .price{
+    color:var(--green);
+    margin-left: 1rem;
+    font-size: 1.75rem;
+    position: relative;
+    bottom: 10px; /* Adjust the distance from the bottom as needed */
+    right: -100px; /* Adjust the distance from the right as needed */
+    
+}
+
+.btn {
+    position: relative;
+    bottom: -20px; /* Adjust the distance from the bottom as needed */
+    right: 100px; /* Adjust the distance from the right as needed */
+    /* Your existing styles for .btn */
+}
+
+button.Cart{
+    background-color: var(--black);
+    padding: 10px 20px 10px 20px;
+    color: rgb(235, 231, 231);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button.Cart:hover{
+    background-color: var(--green);
+}
+
+/* -------------------------------- CONTACT---------------------------------------- */
+/* Style the "Contact Us" link with black text */
+#contact-link {
+    color: none; /* Black text color */
+    text-decoration: none;
+    padding: 2px;
+    display: inline-block;
+    position: relative; /* Add relative positioning */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Add a dropdown symbol using the ::after pseudo-element */
+#contact-link::after {
+    content: "\25BC"; /* Unicode character for a down arrow */
+    margin-left: 5px; /* Add some spacing */
+    font-size: 12px; /* Reduce the size of the arrow symbol */
+}
+
+/* Change the text color to green on hover */
+#contact-link:hover {
+    color: var(--green); /* Green text color on hover */
+}
+
+/* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 40px;
+    left: 0;
+}
+
+/* Show the dropdown content when the "Contact Us" link is hovered over */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styles for the contact details */
+#contact-details {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+#contact-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#contact-details p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+/* -------------------------------- Text size display in menu---------------------------------------- */
+
+.custom-heading {
+    font-size: 24px;
+}
+
+.custom-link {
+    font-size: 10px;
+    color: grey;
+    font-style: italic;
+    text-align: justify;
+    height: 80px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.btn {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+/* ...................................Review......................................*/
+.reviews{
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 60px 10;
+}
+
+.slide{
+    padding:2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow:var(--box-shadow);
+    border:.1rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    position: relative;
+
+}
+
+.slide .fa-quote-right{
+    position: absolute;
+    top:2rem; right:5rem;
+    font-size: 6rem;
+    color:#ccc;
+}
+
+.slide .user{
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.slide .user img{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.slide .user h3{
+    color:var(--black);
+    font-size: 2rem;
+    padding-bottom: .5rem;
+}
+
+.slide .user i{
+    font-size: 1.3rem;
+    color:var(--green);
+}
+
+.slide p{
+    font-size: 2rem;
+    line-height: 1.8;
+    color:var(--light-color);
+}
+/*--------------------------------Order----------------------------*/
+/* Apply styles to the section with the ID "order" */
+#order {
+    text-align: center; /* Center-align the content within the section */
+    padding: 20px; /* Add some padding for spacing */
+  }
+  
+  /* Style the sub-heading (h1) */
+  .sub {
+    font-size: 24px; /* Set the font size */
+    color: #1c1313; /* Set the text color */
+  }
+  
+  /* Style the paragraph */
+  p {
+    font-size: 3.5rem; /* Set the font size */
+    color: #151212; /* Set the text color */
+  }
+
+  #order a.login {
+    text-decoration: none;
+    color: #0b0909;
+    box-shadow: 5px 2px 5px 2px rgb(100, 95, 95);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    background-color: green; /* Set the background color to green */
+}
+
+/* Remove the previous style for anchor elements within "order" */
+#order a:not(.login) {
+    color: inherit;
+    box-shadow: none;
+    padding: inherit;
+    border-radius: inherit;
+    font-weight: inherit;
+    transition: inherit;
+    background-color: transparent; /* Set the background color to transparent for other anchors */
+}
+
+
+
+
+/*cart*/
+
+.cart1{
+    position: fixed;
+    top:0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f0f0f0;;;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+}
+
+.cart1.active {
+    right: 0;
+}
+
+
+.cart-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.cart-box {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+    padding: 15px; /* Increase padding for more space */
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    width: 100%; /* Make the cart box take the full width */
+    box-sizing: border-box; /* Include padding and border in the box model */
+}
+
+
+.cart-content {
+    margin-bottom: 1.5rem; /* Add margin at the bottom of cart content */
+
+}
+.cart-img {
+    width: 120px; /* Increase the image width */
+    height: 120px; /* Increase the image height */
+    object-fit: contain;
+    padding: 10px;
+}
+.detail-box {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-product-title {
+    font-size: 1.2rem; /* Increase font size for product title */
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+
+.cart-price {
+    font-weight: 600; /* Increase font weight for price */
+}
+
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgb(111, 102, 102);
+}
+
+.cart-quantity label {
+    margin-right: 0.5rem;
+}
+
+.cart-quantity input {
+    border: 1px solid var(--text-color);
+    outline-color: var(--main-color);
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove {
+    font-size: 24px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--text-color);
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+}
+
+.total-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.total-price {
+    margin-left: 0.5rem;
+}
+
+.btn-buy {
+    display: flex;
+    margin: 3rem auto 0 auto;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    background-color: var(--black);
+    color: rgb(235, 231, 231);
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-buy:hover{
+    background-color: var(--green);
+}
+
+
+#close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.add-cart{
+    position: initial;
+    bottom:0;
+    right: 0;
+    background:  var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+
+/* In this updated code:
+
+We target the login button anchor element with the class "login" specifically within the "order" section using #order a.login.
+
+We set the background color of the login button to green with background-color: green;.
+
+We also add a rule to reset the styles for other anchor elements within the "order" section using #order a:not(.login). This ensures that only the login button gets the green background color while other anchors retain their default styles. */
+
+
+
+
+
+
+  
+  
+  

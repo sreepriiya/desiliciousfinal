@@ -1,0 +1,135 @@
+:root{
+  --green:#27ae60;
+  --black:#192a56;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+#signupform {
+    margin: auto;
+    width: 550px;
+    margin: 10% auto;
+    padding: 30px;
+    box-shadow: 10px 5px 10px 5px rgb(100, 95, 95);
+    text-align: center;
+  }
+  h1{
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+  #username, #password, button, #firstname, #lastname, #email, #confirmpassword{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #username, #password, #confirmpassword, #email, #firstname, #lastname{
+    background-color: rgb(245, 241, 241);
+  }
+#username:hover, #password:hover, #confirmpassword:hover, #email:hover, #firstname:hover, #lastname:hover{ 
+    background-color: rgb(177, 165, 165);
+  }
+  #username::placeholder, #password::placeholder, #confirmpassword::placeholder, #email::placeholder, #firstname::placeholder, #lastname::placeholder{
+    font-size: 18px;
+  }
+
+  button{
+    background-color: var(--black);
+    padding: 10px 50px 10px 50px;
+    color: rgb(235, 231, 231);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 5px 2px 5px 2px rgb(100, 95, 95);
+  }
+  button:hover{
+    background-color: var(--green);
+  }
+
+  .colone{
+    font-size: 17px;
+  }
+  td{
+    text-align: left;
+  }
+
+  p.inputlength{
+    font-size: 10px;
+    color: red;
+    font-style: italic;
+  }
+
+
+  /* Style the "Contact Us" link with black text */
+#contact-link {
+  color: var(--light-color);
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  position: relative; /* Add relative positioning */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Add a dropdown symbol using the ::after pseudo-element */
+#contact-link::after {
+  content: "\25BC"; /* Unicode character for a down arrow */
+  margin-left: 5px; /* Add some spacing */
+  font-size: 12px; /* Reduce the size of the arrow symbol */
+}
+
+/* Change the text color to green on hover */
+#contact-link:hover {
+  color: var(--green); /* Green text color on hover */
+}
+
+/* Style the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 40px;
+  left: 0;
+}
+
+/* Show the dropdown content when the "Contact Us" link is hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Styles for the contact details */
+#contact-details {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+#contact-details h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#contact-details p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+#loginform h3{
+  margin-top: 50px;
+}
+@media(max-width: 763px){
+  #loginform{
+    margin-top: 20%;
+  }
+}

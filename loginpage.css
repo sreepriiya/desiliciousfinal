@@ -1,0 +1,123 @@
+:root{
+  --green:#27ae60;
+  --black:#192a56;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+#loginform, #emailform, #forgotpasswordform{
+    margin: auto;
+    width: 500px;
+    margin-top:10%;
+    padding: 10px;
+    box-shadow: 10px 5px 10px 5px rgb(100, 95, 95);
+    text-align: center;
+  }
+
+  h1{
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  
+  #username, #password, #loginbutton, #emailbutton, #email{
+    padding: 10px 80px 10px 80px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #email{
+    padding: 10px 15px 10px 15px;
+  }
+  #username::-webkit-input-placeholder, #password::-webkit-input-placeholder {
+    text-align: center;
+  }
+  #username, #password, #email{
+    background-color: rgb(245, 241, 241);
+  }
+#username:hover, #password:hover, #email:hover{ 
+    background-color: rgb(177, 165, 165);
+  }
+  #username::placeholder, #password::placeholder{
+    font-size: 18px;
+  }
+  #loginbutton, #emailbutton{
+    background-color: var(--black);
+    padding: 10px 50px 10px 50px;
+    color: rgb(235, 231, 231);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 5px 2px 5px 2px rgb(100, 95, 95);
+  }
+  #loginbutton:hover, #emailbutton:hover{
+    background-color: var(--green);
+  }
+
+
+/* 
+#contact-link {
+  color: var(--light-color);
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  position: relative; 
+  transition: color 0.3s; 
+}
+
+
+#contact-link::after {
+  content: "\25BC"; 
+  margin-left: 5px; 
+  font-size: 12px; 
+}
+
+
+#contact-link:hover {
+  color: var(--green); 
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 40px;
+  left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#contact-details {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+#contact-details h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#contact-details p {
+  font-size: 14px;
+  margin: 5px 0;
+} */
+
+@media(max-width: 763px){
+  #loginform, #emailform, #forgotpasswordform{
+    margin-top: 20%;
+  }
+}
+

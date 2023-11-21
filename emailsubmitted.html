@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Submitted!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginpage.css">
+
+</head>
+<body class="initial-load">
+<!-- Header section displays navigation bar  -->
+    <header>
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <a href="index.html" class="logo"><i class="fa fa-coffee"></i> Desilicious</a>
+    <nav class="navbar">    
+        <a class="" href="index.html#home">home</a>
+        <a class="" href="index.html#specials">specials</a>
+        <a class="" href="index.html#menu">menu</a>
+        <a class="" href="index.html#reviews">reviews</a>
+        <a class="" href="index.html#order">order</a>
+        <a href="help.html">help</a>
+         <!-- For contact us code -->
+        <div class="dropdown">
+            <a class="" href="#" id="contact-link">Contact us</a>
+            <div class="dropdown-content" id="contact-details">
+                <h2>Contact Information</h2>
+                <p>Location: </p> <a href="https://maps.app.goo.gl/m2c6gfSQRCcVvLnT9" style="font-size: 12px;">4101 W Parmer Ln unit c, Austin, TX 78727</a>
+                <p>Phone Number: <p style="font-size: 12px; padding-left: 20px; color: #666;">+1 (571) 456-7890</p></p>
+            </div>
+        </div>
+         <!-- Contact us code ends  -->
+        <a  href="loginpage.html">Login</a>
+       
+       
+    </nav>  
+
+    <div class="icons">
+    <a href="#" class="search"><i class="fas fa-search" id="search-icon"></i></a>
+    <a href="#" class="cart"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+
+    <div class="cart1">
+        <h2 class="cart-title">Your Cart</h2>
+        <!--- content-->
+        <div class="cart-content">
+            <div class="cart-box">
+                <img src="images/hakkanoodles.jpg" alt="Image 1" class="cart-img">
+                <div class="detail-box">
+                    <div class="cart-product-title">Hakka Noodles</div>
+                    <div class="cart-price">$12.99</div>
+                    <div class="cart-price" class="cart-quantity">quantity</div>
+                    <input type="number" value="1" class="cart-quantity">
+
+                </div>
+                 <!----remove cart-->
+                <i class='bx bxs-trash cart-remove' style="background: none; margin-left: 0px;"></i>
+            
+
+            </div>
+            <div class="cart-box">
+                <img src="images/pav.jpg" alt="Image 1" class="cart-img">
+                <div class="detail-box">
+                    <div class="cart-product-title">Pav bajji</div>
+                    <div class="cart-price" class="cart-quantity">quantity</div>
+                    <div class="cart-price">$10</div>
+                    <input type="number" value="1" class="cart-quantity">
+
+                </div>
+                 <!----remove cart-->
+                <i class='bx bxs-trash cart-remove' style="background: none; margin-left: 0px;"></i>
+            
+
+            </div>
+        </div>
+              <!---total-->
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">$0</div>
+     </div>
+
+     <!--button-->
+     <button type="button" class="btn-buy">Buy Now</button>
+     <!--cart close-->
+     <i class='bx bx-x' id="close-cart"></i>
+
+
+ 
+     </div>
+
+        </div>
+    </div>
+  
+</header>    
+ <!-- ---------------------------- Search box ----------------------------------  -->
+
+<!-- code for Search bar -->
+<form action="" id="search-form">
+    <input type="search" placeholder="search now" name="" id="search-box">
+    <lable for="search-box" class="fas fa-search"></lable>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+        
+        <form action="loginpage.html" method="get" class="emailform" id="emailform">
+            <h1>Email Submitted!</h1>
+            <br>
+            <div style="font-size: 13px;">An email has been sent to your account to reset the password.<br>
+            </div>
+            <br>
+            <button id="emailbutton" type="submit">Back to Login</button> 
+          </form>
+          <footer>
+
+
+
+            <div class="flexfooter" style="margin-top: 250px;">
+                <div class="lastdata"><p style="font-size: 6mm; font-weight: bolder; color: white;">Desilicious</p> <br>
+                    Your one-stop online haven for the finest Indian culinary delights. <br> Order now and embark on a flavorful journey from the convenience of your own home.
+                </div>
+        
+                <div class="lastsocial"><p style="font-size: 6mm; font-weight: bolder; color: white;">Social</p> <br>
+                    <a href="https://www.facebook.com/profile.php?id=61552660303884"><i class="fab fa-facebook" style="font-size: 28px; padding: 0 2px 0 2px;"></i></a>
+                    <a href="https://www.instagram.com/desilicious866/"><i class="fab fa-instagram" style="font-size: 28px; padding: 0 2px 0 2px;"></i></a>
+                    <a href="https://www.pinterest.com/desilicious866/"><i class="fab fa-pinterest" style="font-size: 28px; padding: 0 2px 0 2px;"></i></a>
+                    <a href="https://twitter.com/Desiliciou31771"><i class="fab fa-twitter" style="font-size: 28px; padding: 0 2px 0 2px;"></i></a>
+                    <a href="mailto:desilicious866@gmail.com"><i class="fab fa-google" style="font-size: 28px; padding: 0 2px 0 2px;"></i></a>
+                </div>
+            </div>
+        </footer>
+        <script src="projct.js"></script>
+        <script src="login.js"></script>
+
+</body>
+</html>
